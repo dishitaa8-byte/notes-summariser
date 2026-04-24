@@ -1,0 +1,4 @@
+flask
+sumy
+PyPDF2
+python-dotenv

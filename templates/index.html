@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes Summariser</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Notes Summariser</h1>
+        <p class="subtitle">Summarize text directly or upload a TXT/PDF file.</p>
+
+        <form method="post" enctype="multipart/form-data">
+            <label for="text_input">Paste Text</label>
+            <textarea id="text_input" name="text_input" rows="10" placeholder="Enter your notes here...">{{ input_text }}</textarea>
+
+            <div class="or">OR</div>
+
+            <label for="file_input">Upload File (.txt or .pdf)</label>
+            <input id="file_input" type="file" name="file_input" accept=".txt,.pdf">
+
+            <button type="submit">Summarize</button>
+        </form>
+
+        {% if error %}
+        <div class="error">{{ error }}</div>
+        {% endif %}
+
+        {% if summary %}
+        <div class="result">
+            <h2>Summary</h2>
+            <p>{{ summary }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
