@@ -130,6 +130,7 @@ button:hover {
     border: 1px solid #dccaf8;
     padding: 18px;
     border-radius: 12px;
+    color: #2a1f44;
 }
 
 .result h2 {
@@ -145,4 +146,5 @@ button:hover {
     margin: 0;
     font-size: 0.98rem;
     line-height: 1.65;
+    color: #2a1f44;
 }
